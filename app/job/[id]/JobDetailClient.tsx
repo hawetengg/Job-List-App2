@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import { Job } from "@/app/lib/types/job";
 import { SiTicktick } from "react-icons/si";
 import { CiLocationOn, CiCirclePlus } from "react-icons/ci";
+import { formatDateToCustomString } from "@/util/formaDate";
 import {
   MdOutlineLocalFireDepartment,
   MdOutlineDateRange,
@@ -77,11 +78,11 @@ const JobDetailClient = () => {
           <h2 className="text-2xl font-bold mb-2 text-[#25324B]">About</h2>
           <p className="flex gap-2">
             <CiCirclePlus />
-            Posted On: {job.datePosted}
+            Posted On: {formatDateToCustomString(job.datePosted)}
           </p>
           <p className="flex gap-2">
             <MdOutlineLocalFireDepartment />
-            Deadline: {job.deadline}
+            Deadline: {formatDateToCustomString(job.deadline)}
           </p>
           <p className="flex gap-2">
             <CiLocationOn />
@@ -92,11 +93,11 @@ const JobDetailClient = () => {
           </p>
           <p className="flex gap-2">
             <MdOutlineDateRange />
-            Start Date: {job.startDate}
+            Start Date: {formatDateToCustomString(job.startDate)}
           </p>
           <p className="flex gap-2">
             <MdOutlineDateRange />
-            End Date: {job.endDate}
+            End Date: {formatDateToCustomString(job.endDate)}
           </p>
           <h2 className="text-2xl font-bold mb-2 text-[#25324B]">Categories</h2>
           {Array.isArray(job.categories) && job.categories.length > 0 ? (
