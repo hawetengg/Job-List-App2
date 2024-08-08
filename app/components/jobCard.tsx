@@ -19,7 +19,7 @@ const JobCard: React.FC<JobCardProps> = ({
   return (
     <div className="card border p-4 rounded-lg shadow-lg bg-gray-50">
       <div className="flex">
-        <Image
+        <img
           src={imageUrl}
           alt={title}
           width={100}
